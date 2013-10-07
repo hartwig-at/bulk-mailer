@@ -45,7 +45,6 @@ if( $Html ) {
     if( $Matches.Count -gt 0 ) {
         $alternateView = [System.Net.Mail.AlternateView]::CreateAlternateViewFromString( $body, $null, "text/html" );
     
-
         foreach( $contentId in $Matches ) {
             $id = $contentId.Groups[1].Value;
             if( Test-Path $id ) {
@@ -144,7 +143,6 @@ foreach( $address in $addresses ) {
     $sendingSucceeded += $address;
     Write-Host "Done.";
 }
-
 
 Write-Host "";
 Write-Host "> Operation completed." $sendingSucceeded.Count "successful," $sendingFailed.Count "failed";
